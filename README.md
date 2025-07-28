@@ -37,31 +37,22 @@ Event_Booking_System/
 ⚙️ Installation
 Clone the repository
 
-bash
-Copy
-Edit
+
 git clone https://github.com/OhanyanDavit/Event_Booking_System.git
 cd Event_Booking_System
+
 Install dependencies
 
-bash
-Copy
-Edit
 npm install
-Set up environment variables
+
 
 Create a .env file and add your database connection:
 
-ini
-Copy
-Edit
+
 PORT=5000
-DB_USER=your_db_user
-DB_HOST=localhost
-DB_NAME=event_booking
-DB_PASSWORD=your_db_password
-DB_PORT=5432
+DB_URI="YOURDBURI"
 JWT_SECRET=your_secret_key
+
 Run the server
 
 bash
@@ -70,9 +61,10 @@ Edit
 npm start
 📬 API Endpoints (Examples)
 Auth
-POST /auth/register – Register a user
 
-POST /auth/login – Login and get token
+POST /user/register – Register a user
+
+POST /user/login – Login and get token
 
 Events
 POST /events – Create event (admin only)
@@ -81,14 +73,10 @@ GET /events – List all events
 
 GET /events/:id – Get event by ID
 
-PUT /events/:id – Update event
-
-DELETE /events/:id – Delete event
 
 Bookings
-POST /events/:id/book – Book a ticket
-
-DELETE /events/:id/cancel – Cancel booking
+POST /bookings – Book a ticket
+GET /bookings - Post a ticket
 
 🔐 Auth Flow
 Users receive a JWT after login.
